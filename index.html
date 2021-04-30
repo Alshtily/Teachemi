@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teachemi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEader -->
+
+    <h1>Teachemi</h1>
+
+    <div class="sear">
+      <input type="search" name="search" id="search" />
+      <button id="btn">Search</button>
+    </div>
+
+    <!-- End Header -->
+    <!--- Main  -->
+    <div class="cards" id="cards">
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="./pages/">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="card">
+          <h1>He</h1>
+        </div>
+      </a>
+    </div>
+  </body>
+
+  <script>
+    document.getElementById('cards').innerHTML = '';
+
+    let Items = [
+      { n: 1, name: 'هيدروجين', id: 'H' },
+      { n: 2, name: 'ليثيوم', id: 'Li' },
+      { n: 3, name: 'بيريليوم', id: 'Be' },
+      { n: 4, name: 'بورون', id: 'B' },
+      { n: 5, name: 'كربون', id: 'C' },
+      { n: 6, name: 'هيليوم', id: 'He' },
+      { n: 7, name: 'نيتروجين', id: 'N' },
+      { n: 8, name: 'أكسجين', id: 'O' },
+      { n: 9, name: 'فلور', id: 'F' },
+      { n: 10, name: 'صوديوم', id: 'Na' },
+      { n: 11, name: 'نيون', id: 'Ne' },
+      { n: 12, name: 'ماغنسيوم', id: 'Mg' },
+      { n: 13, name: 'ألومنيوم', id: 'Al' },
+      { n: 14, name: 'سيليكون', id: 'Si' },
+      { n: 15, name: 'فوسفور', id: 'P' },
+      { n: 16, name: 'كبريت', id: 'S' },
+      { n: 17, name: 'كلور', id: 'Cl' },
+      { n: 18, name: 'أرجون', id: 'Ar' },
+      { n: 19, name: 'بوتاسيوم', id: 'K' },
+      { n: 20, name: 'كالسيوم', id: 'Ca' },
+    ];
+
+    Items.map((s) => {
+      console.log(s.id);
+
+      document.getElementById('cards').innerHTML =
+        document.getElementById('cards').innerHTML +
+        `
+
+        <a href="./pages/${s.id}.html">
+          <div class="card">
+            <h1>${s.id}</h1>
+          </div>
+        </a>
+
+        `;
+    });
+
+    document.getElementById('btn').onclick = function () {
+      document.getElementById('cards').innerHTML = '';
+      console.log(document.getElementById('search').value);
+
+      let sorted = Items.filter((s) =>
+        s.id.includes(document.getElementById('search').value)
+      );
+      console.log(sorted);
+
+      sorted.map((s) => {
+        document.getElementById('cards').innerHTML =
+          document.getElementById('cards').innerHTML +
+          `
+
+        <a href="./pages/${s.id}.html">
+          <div class="card">
+            <h1>${s.id}</h1>
+          </div>
+        </a>
+
+        `;
+      });
+    };
+  </script>
+
+  <!-- End Main  -->
+</html>
